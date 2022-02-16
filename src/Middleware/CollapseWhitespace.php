@@ -10,7 +10,7 @@ class CollapseWhitespace extends PageSpeed
             "/\n([\S])/" => '$1',
             "/\r/" => '',
             "/\n/" => '',
-            "/\t/" => '',
+            # "/\t/" => '', // fix template
             "/ +/" => ' ',
             "/> +</" => '><',
         ];
