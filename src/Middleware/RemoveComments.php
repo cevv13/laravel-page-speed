@@ -9,12 +9,15 @@ class RemoveComments extends PageSpeed
 
     public function apply($buffer)
     {
-        $buffer = $this->replaceInsideHtmlTags(['script', 'style'], self::REGEX_MATCH_JS_AND_CSS_COMMENTS, '', $buffer);
+        //$buffer = $this->replaceInsideHtmlTags(['script', 'style'], self::REGEX_MATCH_JS_AND_CSS_COMMENTS, '', $buffer);  // original
+
+        //$buffer = $this->replaceInsideHtmlTags(['script', 'style'], self::REGEX_MATCH_HTML_COMMENTS, '', $buffer);
 
         $replaceHtmlRules = [
-            self::REGEX_MATCH_HTML_COMMENTS => '',
+            self::REGEX_MATCH_HTML_COMMENTS => ' ',
         ];
 
         return $this->replace($replaceHtmlRules, $buffer);
     }
 }
+
