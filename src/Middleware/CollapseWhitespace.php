@@ -15,7 +15,8 @@ class CollapseWhitespace extends PageSpeed
             "/> +</" => '><',
         ];
 
-        return $this->replace($replace, $this->removeComments($buffer));
+        //return $this->replace($replace, $this->removeComments($buffer));                                              // no funciona con la vista de error de laravel
+        return $this->replace($replace, $buffer);
     }
 
     protected function removeComments($buffer)
